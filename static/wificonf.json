@@ -1,0 +1,144 @@
+{
+	"data":{
+	  "forms":[
+      {
+  			"title": "Module ID",
+				"enabled": true,
+  			"name": "module_id",
+        "val": "ESP"
+  		},{
+  			"title": "Wi-Fi type",
+				"enabled": true,
+  			"name": "wifi_mode",
+        "selected": "STA",
+  			"options":[{
+  				"name": "Access Point",
+  				"val": "AP"
+  			},{
+  				"name": "Client",
+  				"val": "STA"
+  			},{
+  				"name": "AP + Client",
+  				"val": "AP_STA"
+  			}]
+  		},{
+  			"header": "AP settings",
+  			"title": "Mode",
+				"enabled": true,
+  			"name": "wifi_phy_mode",
+        "selected": "11G",
+  			"options":[{
+  				"name": "11b",
+  				"val": "11B"
+  			},{
+  				"name": "11g",
+  				"val": "11G"
+  			},{
+  				"name": "11n",
+  				"val": "11N"
+  			}]
+  		},{
+  			"title": "Static IP",
+  			"enabled": true,
+  			"name": "static_ip_enable",
+        "checked": false
+      },{
+  			"title": "Channel",
+				"enabled": true,
+  			"name": "wifi_channel",
+        "selected": "8",
+  			"options":[{
+  				"name": "1",
+  				"val": "1"
+  			},{
+  				"name": "2",
+  				"val": "2"
+  			},{
+  				"name": "3",
+  				"val": "3"
+  			},{
+  				"name": "4",
+  				"val": "4"
+  			},{
+  				"name": "5",
+  				"val": "5"
+  			},{
+  				"name": "6",
+  				"val": "6"
+  			},{
+  				"name": "7",
+  				"val": "7"
+  			},{
+  				"name": "8",
+  				"val": "8"
+  			},{
+  				"name": "9",
+  				"val": "9"
+  			},{
+  				"name": "10",
+  				"val": "10"
+  			},{
+  				"name": "11",
+  				"val": "11"
+  			},{
+  				"name": "12",
+  				"val": "12"
+  			},{
+  				"name": "13",
+  				"val": "13"
+  			}]
+  		},{
+  			"title": "Auth",
+				"enabled": true,
+  			"name": "wifi_auth",
+        "selected": "WPA2_PSK",
+  			"options":[{
+  				"name": "OPEN",
+  				"val": "OPEN"
+  			},{
+  				"name": "WPA_PSK",
+  				"val": "WPA_PSK"
+  			},{
+  				"name": "WPA2_PSK",
+  				"val": "WPA2_PSK"
+  			},{
+  				"name": "WPA_WPA2_PSK",
+  				"val": "WPA_WPA2_PSK"
+  			}]
+  		},{
+  			"title": "AP Password",
+				"enabled": true,
+  			"name": "ap_pwd",
+        "password": "********"
+  		},{
+  			"header": "Client settings",
+  			"title": "SSID",
+				"enabled": true,
+  			"name": "sta_ssid",
+				"val": "IoT"
+  		},{
+  			"title": "Password",
+				"enabled": true,
+  			"name": "sta_pwd",
+        "password": "********"
+  		},{
+  			"title": "Static IP",
+				"enabled": true,
+  			"name": "static_ip",
+				"val": "192.168.2.128"
+  		},{
+  			"title": "Static Gateway",
+				"enabled": true,
+  			"name": "static_gateway",
+				"val": "192.168.2.1"
+  		},{
+  			"title": "Static Subnet",
+				"enabled": true,
+  			"name": "static_subnet",
+				"val": "255.255.255.0"
+  		}
+
+
+    ]
+	}
+}

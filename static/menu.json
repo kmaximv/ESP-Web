@@ -1,0 +1,103 @@
+{
+  "data":{
+    "config":{
+      "data": [{
+        "name": "Wi-Fi",
+        "link": "/wificonf.html",
+        "icon": "glyphicon glyphicon-signal",
+        "isActive": false
+      }, {
+        "name": "Sensors",
+        "link": "/sensorsconf",
+        "icon": "glyphicon glyphicon-cog",
+        "isActive": false
+      }, {
+        "name": "ESP",
+        "link": "/espconf",
+        "icon": "glyphicon glyphicon-wrench",
+        "isActive": false
+      }, {
+        "name": "MQTT",
+        "link": "/mqttconf",
+        "icon": "glyphicon glyphicon-send",
+        "isActive": false
+      }, {
+        "name": "NTP Time",
+        "link": "/ntpconf",
+        "icon": "glyphicon glyphicon-time",
+        "isActive": false
+      }, {
+        "name": "Logging",
+        "link": "/log",
+        "icon": "glyphicon glyphicon-filter",
+        "isActive": false
+      }, {
+        "name": "Update Frimware",
+        "link": "/update",
+        "icon": "glyphicon glyphicon-upload",
+        "isActive": false
+      }, {
+        "name": "FS Editor",
+        "link": "/edit",
+        "icon": "glyphicon glyphicon-edit",
+        "isActive": false
+      }, {
+        "name": "Reboot ESP",
+        "link": "/reboot",
+        "icon": "glyphicon glyphicon-off",
+        "isActive": false
+      }],
+      "title": "Configure",
+      "icon": "glyphicon glyphicon-wrench"
+    },
+    "test":{
+      "data": [{
+        "name": "Wi-Fi",
+        "link": "/wificonf",
+        "icon": "glyphicon glyphicon-signal",
+        "isActive": false
+      }, {
+        "name": "FS Editor",
+        "link": "/edit",
+        "icon": "glyphicon glyphicon-edit",
+        "isActive": false
+      }, {
+        "name": "Reboot ESP",
+        "link": "/reboot",
+        "icon": "glyphicon glyphicon-off",
+        "isActive": false
+      }],
+      "title": "Test",
+      "icon": "glyphicon glyphicon-edit"
+    },
+    "navMenu":[{
+        "name": "Control Pins",
+        "link": "/pincontrol",
+        "icon": "glyphicon glyphicon-tasks",
+        "isActive": false
+      }, {
+        "name": "Console",
+        "link": "/cm",
+        "icon": "glyphicon glyphicon-pencil",
+        "isActive": false
+    }],
+    "footerMenu":[{
+        "name": "Githab",
+        "link": "https://github.com/kmaximv/Wi-Fi-Sensor",
+        "icon": "glyphicon glyphicon-globe",
+        "isActive": false
+      }, {
+        "name": "Wiki",
+        "link": "https://github.com/kmaximv/Wi-Fi-Sensor/wiki",
+        "icon": "glyphicon glyphicon-education",
+        "isActive": false
+      }, {
+        "name": "Issues",
+        "link": "https://github.com/kmaximv/Wi-Fi-Sensor/issues",
+        "icon": "glyphicon glyphicon-bell",
+        "isActive": false
+    }],
+    "header": "ESP",
+    "version": "1.13"
+  }
+}

@@ -1,0 +1,81 @@
+<html lang='en'>
+	<head>
+		<title id='app-header'>{{ header }}</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+		<link rel='stylesheet' href='/bootstrap.min.css'>
+		<script src='/jquery.min.js'></script>
+		<script src='/bootstrap.min.js'></script>
+		<script src='/vue.js'></script>
+		<script src="/axios.min.js"></script>
+		<style>
+			html {
+			position: relative;
+			min-height: 100%;
+			}
+			body {
+			margin-bottom: 72px !important;
+			}
+			.footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class='navbar navbar-inverse'>
+			<div class='container-fluid' id='app-menu'>
+				<div class='navbar-header'>
+					<a class='navbar-brand' href='/'>
+						<span class='glyphicon glyphicon-home'></span>
+						{{ data.header }}
+					</a>
+				</div>
+				<div>
+					<ul class='nav navbar-nav'>
+						<menu-string v-for="item in data.navMenu"
+							:key="item.id"
+							:link='item.link'
+							:icon='item.icon'>
+							{{ item.name }}
+						</menu-string>
+						<menu-list :data='data.config'></menu-list>
+						<menu-list :data='data.test'></menu-list>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class='container-fluid'>
+			<div class='row'>
+				<div id="app">
+					<panel-list :data='data.sensors'></panel-list>
+					<panel-list :data='data.settings'></panel-list>
+				</div>
+				<div class='clearfix visible-lg'></div>
+			</div>
+		</div>
+		<footer class="footer">
+			<nav class="navbar-inverse">
+				<div class="container-fluid">
+					<div class='navbar-footer' id='app-menu-footer'>
+						<ul class="nav navbar-nav">
+							<menu-string v-for="item in data.footerMenu"
+								:key="item.id"
+								:link='item.link'
+								:icon='item.icon'>
+								{{ item.name }}
+							</menu-string>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a>Ver {{ data.version }}</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</footer>
+		<script src='./index.js'></script>
+	</body>
+</html>

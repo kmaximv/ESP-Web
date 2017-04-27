@@ -1,0 +1,39 @@
+{
+  "data":{
+    "settings":{
+      "data": [{
+        "name": "NTP",
+        "val": "20:30",
+        "icon": "glyphicon-time",
+        "show": true
+      }, {
+        "name": "Uptime",
+        "val": "1d 12:54",
+        "icon": "glyphicon-time",
+        "show": true
+      }, {
+        "name": "Voltage",
+        "val": "3.24 V",
+        "icon": "glyphicon-flash",
+        "show": true
+      }],
+      "title": "Settings"
+    },
+    "sensors":{
+      "data": [{
+        "name": "Temp",
+        "val": 25,
+        "icon": "glyphicon-flash",
+        "show": true
+      }, {
+        "name": "Lux",
+        "val": 237,
+        "icon": "glyphicon-time",
+        "show": true
+        }],
+      "title": "Sensors"
+    },
+    "header": "ESP",
+    "updatePage": 3000
+  }
+}
