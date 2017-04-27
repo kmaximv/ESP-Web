@@ -111,9 +111,9 @@ Vue.component('input-string', {
 			if (this.data.name === "wifi_auth" &&
 					optionsData.data.forms[1].selected != "STA") {
 				if (this.data.selected === "OPEN") {
-					optionsData.data.forms[6].enabled = false;
+					optionsData.data.forms[5].enabled = false;
 				} else {
-					optionsData.data.forms[6].enabled = true;
+					optionsData.data.forms[5].enabled = true;
 				}
 			}
 		}
