@@ -2,26 +2,19 @@ var menuData = {
 	data:{
 	  config:{
 			data: [],
-	    title: ''
 	  },
 	  test:{
 			data: [],
-	    title: ''
 	  },
-		header:''
 	}
 };
 
 var optionsData = {
 	data:{
-	  forms:[{
-			header: '',
-			title: '',
-			name: '',
-			options:[]
-		}]
+	  forms:[]
 	}
 };
+
 
 axios.get('./menu.json')
 	.then(function (response) {
@@ -43,9 +36,22 @@ axios.get('./wificonf.json')
 
 Vue.component('input-list', {
 	template: `
+		<div>
+			<input-string v-for='data in forms' :key='data.id' :data='data'></input-string>
+		</div>
+`,
+	props: ['forms']
+});
+
+
+Vue.component('input-string', {
+	template: `
 		<div v-if='data.enabled'>
 			<h4 v-if='data.header'>{{ data.header }}</h4>
-			<div class='form-group'>
+			<div v-if='data.checkbox'>
+				<input-checkbox :data='data'></input-checkbox>
+			</div>
+			<div v-else class='form-group'>
 				<div class='input-group'>
 					<span class='input-group-addon'>{{ data.title }}</span>
 					<select class='form-control'
@@ -81,25 +87,25 @@ Vue.component('input-list', {
 		selectMode: function () {
 			if (this.data.selected === "STA") {
 				optionsData.data.forms[2].enabled = false;
+				optionsData.data.forms[3].enabled = false;
 				optionsData.data.forms[4].enabled = false;
 				optionsData.data.forms[5].enabled = false;
-				optionsData.data.forms[6].enabled = false;
+				optionsData.data.forms[6].enabled = true;
 				optionsData.data.forms[7].enabled = true;
-				optionsData.data.forms[8].enabled = true;
 			} else if (this.data.selected === "AP") {
 				optionsData.data.forms[2].enabled = true;
+				optionsData.data.forms[3].enabled = true;
 				optionsData.data.forms[4].enabled = true;
 				optionsData.data.forms[5].enabled = true;
-				optionsData.data.forms[6].enabled = true;
+				optionsData.data.forms[6].enabled = false;
 				optionsData.data.forms[7].enabled = false;
-				optionsData.data.forms[8].enabled = false;
 			} else if (this.data.selected === "AP_STA") {
 				optionsData.data.forms[2].enabled = true;
+				optionsData.data.forms[3].enabled = true;
 				optionsData.data.forms[4].enabled = true;
 				optionsData.data.forms[5].enabled = true;
 				optionsData.data.forms[6].enabled = true;
 				optionsData.data.forms[7].enabled = true;
-				optionsData.data.forms[8].enabled = true;
 			}
 
 			if (this.data.name === "wifi_auth" &&
@@ -181,6 +187,27 @@ Vue.component('menu-string', {
 	props: ['link', 'icon']
 });
 
+
+Vue.component('app-body', {
+	template: `
+	<div class="col-sm-5 col-md-4 col-lg-3">
+			<h3>{{ data.title }}</h3>
+			<form action="/save" method="POST">
+					<div class="panel panel-default">
+							<div class="panel-body">
+									<input-list :forms='data.forms'></input-list>
+							</div>
+							<div class="panel-footer clearfix">
+									<div class="pull-right"><button type="submit" class="btn btn-primary" name="save_conf" value="1">Save</button></div>
+							</div>
+					</div>
+			</form>
+	</div>
+	`,
+	props: ['data']
+});
+
+
 var appMenu = new Vue({
 	el: "#app-menu",
 	data: menuData
@@ -200,8 +227,5 @@ var appHeader = new Vue({
 
 var app = new Vue({
   el: "#app",
-  data: optionsData,
-	watch: {
-	  'checked': 'changeIpMode'
-  }
+  data: optionsData
 });

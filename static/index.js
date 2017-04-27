@@ -67,6 +67,17 @@ Vue.component('menu-string', {
 	props: ['link', 'icon']
 });
 
+
+Vue.component('app-body', {
+	template: `
+	<div>
+		<panel-list v-for="item in data" :data='item' :key="item.id"></panel-list>
+	</div>
+	`,
+	props: ['data']
+});
+
+
 var appMenu = new Vue({
 	beforeCreate: function() {
 		axios.get('./menu.json')

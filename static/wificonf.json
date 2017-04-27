@@ -1,5 +1,6 @@
 {
 	"data":{
+		"title": "Wi-Fi Configuration",
 	  "forms":[
       {
   			"title": "Module ID",
@@ -37,11 +38,6 @@
   				"name": "11n",
   				"val": "11N"
   			}]
-  		},{
-  			"title": "Static IP",
-  			"enabled": true,
-  			"name": "static_ip_enable",
-        "checked": false
       },{
   			"title": "Channel",
 				"enabled": true,
@@ -121,24 +117,28 @@
 				"enabled": true,
   			"name": "sta_pwd",
         "password": "********"
-  		},{
+			},{
   			"title": "Static IP",
+  			"enabled": true,
+  			"name": "static_ip_enable",
+        "checked": true,
+        "checkbox": true
+  		},{
+  			"title": "IP",
 				"enabled": true,
   			"name": "static_ip",
 				"val": "192.168.2.128"
   		},{
-  			"title": "Static Gateway",
+  			"title": "Gateway",
 				"enabled": true,
   			"name": "static_gateway",
 				"val": "192.168.2.1"
   		},{
-  			"title": "Static Subnet",
+  			"title": "Subnet",
 				"enabled": true,
   			"name": "static_subnet",
 				"val": "255.255.255.0"
   		}
-
-
     ]
 	}
 }

@@ -51,8 +51,7 @@
 		<div class='container-fluid'>
 			<div class='row'>
 				<div id="app">
-					<panel-list :data='data.sensors'></panel-list>
-					<panel-list :data='data.settings'></panel-list>
+					<app-body :data='data'></app-body>
 				</div>
 				<div class='clearfix visible-lg'></div>
 			</div>
@@ -76,6 +75,18 @@
 				</div>
 			</nav>
 		</footer>
-		<script src='./index.js'></script>
+		<script type="text/javascript">
+			function addScript(src){
+			  var script = document.createElement('script');
+			  script.src = src;
+			  script.async = false;
+			  document.head.appendChild(script);
+			}
+			var path = window.location.pathname.split( '.' )[0] + ".js";
+			if (path === "/.js") {
+				path = "index.js"
+			}
+			addScript(path);
+		</script>
 	</body>
 </html>
