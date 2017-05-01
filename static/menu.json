@@ -8,42 +8,42 @@
         "isActive": false
       }, {
         "name": "Sensors",
-        "link": "/sensorsconf",
+        "link": "/sensorsconf.html",
         "icon": "glyphicon glyphicon-cog",
         "isActive": false
       }, {
         "name": "ESP",
-        "link": "/espconf",
+        "link": "/espconf.html",
         "icon": "glyphicon glyphicon-wrench",
         "isActive": false
       }, {
         "name": "MQTT",
-        "link": "/mqttconf",
+        "link": "/mqttconf.html",
         "icon": "glyphicon glyphicon-send",
         "isActive": false
       }, {
         "name": "NTP Time",
-        "link": "/ntpconf",
+        "link": "/ntpconf.html",
         "icon": "glyphicon glyphicon-time",
         "isActive": false
       }, {
         "name": "Logging",
-        "link": "/log",
+        "link": "/log.html",
         "icon": "glyphicon glyphicon-filter",
         "isActive": false
       }, {
         "name": "Update Frimware",
-        "link": "/update",
+        "link": "/update.html",
         "icon": "glyphicon glyphicon-upload",
         "isActive": false
       }, {
         "name": "FS Editor",
-        "link": "/edit",
+        "link": "/edit.html",
         "icon": "glyphicon glyphicon-edit",
         "isActive": false
       }, {
         "name": "Reboot ESP",
-        "link": "/reboot",
+        "link": "/reboot.html",
         "icon": "glyphicon glyphicon-off",
         "isActive": false
       }],
@@ -72,12 +72,12 @@
     },
     "navMenu":[{
         "name": "Control Pins",
-        "link": "/pincontrol",
+        "link": "/pincontrol.html",
         "icon": "glyphicon glyphicon-tasks",
         "isActive": false
       }, {
         "name": "Console",
-        "link": "/cm",
+        "link": "/cm.html",
         "icon": "glyphicon glyphicon-pencil",
         "isActive": false
     }],
