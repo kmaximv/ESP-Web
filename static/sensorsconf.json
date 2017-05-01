@@ -1,0 +1,48 @@
+{
+  "data":{
+    "tableData": [{
+      "name": "MH-Z19",
+      "type": "UART",
+      "tag": "kdb-uart",
+      "gpio": "Rx:1, Tx:2"
+    }, {
+      "name": "PZEM",
+      "type": "UART",
+      "tag": "kdb-uart",
+      "gpio": "Rx:1, Tx:2"
+    }, {
+      "name": "BH1750",
+      "type": "I2C",
+      "tag": "kdb-i2c",
+      "gpio": "4, 5"
+    }, {
+      "name": "BME280",
+      "type": "I2C",
+      "tag": "kdb-i2c",
+      "gpio": "4, 5"
+    }, {
+      "name": "SHT21",
+      "type": "I2C",
+      "tag": "kdb-i2c",
+      "gpio": "4, 5"
+    }, {
+      "name": "Motion Sensor",
+      "type": "INPUT",
+      "tag": "kdb-input",
+      "gpio": "14"
+    }, {
+      "name": "DS18X20",
+      "type": "Wire",
+      "tag": "kdb-wire",
+      "gpio": "2"
+    }, {
+      "name": "DHT",
+      "type": "Other",
+      "tag": "",
+      "gpio": "2"
+    }],
+    "header": "ESP",
+    "showModal": false,
+    "idModal": ""
+  }
+}

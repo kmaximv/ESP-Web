@@ -9,9 +9,9 @@ var menuData = {
 	}
 };
 
-var optionsData = {
+var tableData = {
 	data:{
-	  forms:[]
+	  tableData:[]
 	}
 };
 
@@ -32,6 +32,81 @@ axios.get('./sensorsconf.json')
 	.catch(function (error) {
 			console.log(error);
 	});
+
+
+Vue.component('modal', {
+  template: `
+		<transition name="modal">
+	    <div class="modal-mask">
+	      <div class="modal-wrapper">
+	        <div class="modal-container">
+
+	          <div class="modal-header">
+	            <slot name="header">
+	              {{ data.name }}
+	            </slot>
+	          </div>
+
+	          <div class="modal-body">
+	            <slot name="body">
+								<div class='form-group'>
+									<div class="input-group">
+	                  <span class="input-group-addon">Type</span>
+	                  <input type="text" :value="data.type" v-model="data.type" class="form-control">
+	                </div>
+								</div>
+								<div class='form-group'>
+									<div class="input-group">
+	                  <span class="input-group-addon">GPIO</span>
+	                  <input type="text" :value="data.gpio" v-model="data.gpio" class="form-control">
+	                </div>
+	              </div>
+	            </slot>
+	          </div>
+
+	          <div class="modal-footer">
+	            <slot name="footer">
+	              <button class="modal-default-button" @click="$emit('close')">
+	                OK
+	              </button>
+	            </slot>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </transition>
+	`,
+	props: ['data'],
+
+});
+
+
+Vue.component('table-row', {
+	template: `
+		<tbody>
+			<tr v-for="entry in data.tableData">
+				<td>{{ entry.name }}</td>
+				<td class="text-center">{{ entry.gpio }}</td>
+				<td class="text-center"><kbd :class="entry.tag">{{ entry.type }}</kbd></td>
+				<td class="text-right">
+					<a>
+							<i class='glyphicon glyphicon-edit'
+								@click="data.showModal = true, data.idModal = entry">
+							</i>
+					</a>
+					&nbsp;
+					<a>
+							<i class='glyphicon glyphicon-remove-circle'
+								@click="data.tableData.splice(data.tableData.indexOf(entry), 1)">
+							</i>
+					</a>
+					&nbsp;
+				</td>
+			</tr>
+		</tbody>
+	`,
+	props: ['data'],
+});
 
 
 Vue.component('menu-list', {
@@ -76,53 +151,7 @@ Vue.component('app-body', {
 			      <th class="text-center" style="width:13%"></th>
 			    </tr>
 			  </thead>
-			  <tbody>
-			    <tr>
-			      <td>BME280</td>
-			      <td class="text-center">4, 5</td>
-			      <td class="text-center"><kbd class="kdb-i2c">I2C</kbd></td>
-			      <td class="text-right">
-							<a>
-									<i class='glyphicon glyphicon-edit'></i>
-							</a>
-							&nbsp;
-							<a>
-									<i class='glyphicon glyphicon-remove-circle'></i>
-							</a>
-							&nbsp;
-						</td>
-			    </tr>
-			    <tr>
-			      <td>DHT</td>
-			      <td class="text-center">2</td>
-			      <td class="text-center"><kbd class="kdb-wire">1Wire</kbd></td>
-			      <td class="text-right">
-							<a>
-									<i class='glyphicon glyphicon-edit'></i>
-							</a>
-							&nbsp;
-							<a>
-									<i class='glyphicon glyphicon-remove-circle'></i>
-							</a>
-							&nbsp;
-						</td>
-			    </tr>
-			    <tr>
-			      <td>Motion Sensor</td>
-			      <td class="text-center">14</td>
-			      <td class="text-center"><kbd class="kdb-input">INPUT</kbd></td>
-			      <td class="text-right">
-							<a>
-									<i class='glyphicon glyphicon-edit'></i>
-							</a>
-							&nbsp;
-							<a>
-									<i class='glyphicon glyphicon-remove-circle'></i>
-							</a>
-							&nbsp;
-						</td>
-			    </tr>
-			  </tbody>
+				<table-row :data='data'></table-row>
 			</table>
 
 			<div class="row">
@@ -139,20 +168,16 @@ Vue.component('app-body', {
           </div>
       </div>
 
+			<modal v-if="data.showModal"
+				:data="data.idModal"
+				@close="data.showModal = false">
+			</modal>
 
 	</div>
 	`,
 	props: ['data']
 });
 
-//BME280
-//SHT21
-//DHT
-//DS18X20
-//BH1750
-//Motion Sensor
-//Energy Monitor
-//MH-Z19
 
 var appMenu = new Vue({
 	el: "#app-menu",
@@ -173,5 +198,5 @@ var appHeader = new Vue({
 
 var app = new Vue({
   el: "#app",
-  data: optionsData
+  data: tableData
 });
