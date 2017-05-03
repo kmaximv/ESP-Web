@@ -66,12 +66,21 @@
 			  transform: scale(1.1);
 			}
 
+			.th-min-width {
+				min-width: 100px;
+				width: 100px;
+			}
+			.tr-color {
+				background-color: black;
+				color: #c3c3c3;
+			}
+
 			.kdb-input {
 			  background-color: #287c72;
 			  color: #ffffff;
 			}
 			.kdb-i2c {
-			  background-color: #53ad2f;
+			  background-color: #458f28;
 			  color: #ffffff;
 			}
 			.kdb-wire {
@@ -102,7 +111,6 @@
 							{{ item.name }}
 						</menu-string>
 						<menu-list :data='data.config'></menu-list>
-						<menu-list :data='data.test'></menu-list>
 					</ul>
 				</div>
 			</div>

@@ -7,8 +7,8 @@
         "icon": "glyphicon glyphicon-signal",
         "isActive": false
       }, {
-        "name": "Sensors",
-        "link": "/sensorsconf.html",
+        "name": "Modules",
+        "link": "/modules.html",
         "icon": "glyphicon glyphicon-cog",
         "isActive": false
       }, {
@@ -49,26 +49,6 @@
       }],
       "title": "Configure",
       "icon": "glyphicon glyphicon-wrench"
-    },
-    "test":{
-      "data": [{
-        "name": "Wi-Fi",
-        "link": "/wificonf",
-        "icon": "glyphicon glyphicon-signal",
-        "isActive": false
-      }, {
-        "name": "FS Editor",
-        "link": "/edit",
-        "icon": "glyphicon glyphicon-edit",
-        "isActive": false
-      }, {
-        "name": "Reboot ESP",
-        "link": "/reboot",
-        "icon": "glyphicon glyphicon-off",
-        "isActive": false
-      }],
-      "title": "Test",
-      "icon": "glyphicon glyphicon-edit"
     },
     "navMenu":[{
         "name": "Control Pins",

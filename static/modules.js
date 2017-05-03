@@ -24,7 +24,7 @@ axios.get('./menu.json')
 			console.log(error);
 	});
 
-axios.get('./sensorsconf.json')
+axios.get('./modules.json')
 	.then(function (response) {
 			app.data = response.data.data;
 			appHeader.header = response.data.data.header;
@@ -88,19 +88,13 @@ Vue.component('table-row', {
 				<td>{{ entry.name }}</td>
 				<td class="text-center">{{ entry.gpio }}</td>
 				<td class="text-center"><kbd :class="entry.tag">{{ entry.type }}</kbd></td>
-				<td class="text-right">
-					<a>
-							<i class='glyphicon glyphicon-edit'
-								@click="data.showModal = true, data.idModal = entry">
-							</i>
-					</a>
-					&nbsp;
-					<a>
-							<i class='glyphicon glyphicon-remove-circle'
-								@click="data.tableData.splice(data.tableData.indexOf(entry), 1)">
-							</i>
-					</a>
-					&nbsp;
+				<td class="text-center">
+					<button class='btn btn-primary btn-xs glyphicon glyphicon-edit'
+						@click="data.showModal = true, data.idModal = entry">
+					</button>
+					<button class='btn btn-danger btn-xs glyphicon glyphicon-remove-circle'
+						@click="data.tableData.splice(data.tableData.indexOf(entry), 1)">
+					</button>
 				</td>
 			</tr>
 		</tbody>
@@ -139,16 +133,16 @@ Vue.component('menu-string', {
 Vue.component('app-body', {
 	template: `
 
-	<div class="col-xs-12 col-sm-10 col-md-8 col-lg-7">
-			<h3>Periphery</h3>
+	<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+			<h3>Modules</h3>
 
-			<table class="table table-hover table-bordered">
+			<table class="table table-hover table-bordered table-striped">
 			  <thead>
-			    <tr class="text-center">
+			    <tr class="text-center tr-color">
 			      <th class="text-center">Name</th>
-			      <th class="text-center">GPIO</th>
-			      <th class="text-center">Type</th>
-			      <th class="text-center" style="width:13%"></th>
+			      <th class="text-center th-min-width">GPIO</th>
+			      <th class="text-center th-min-width">Type</th>
+			      <th class="text-center th-min-width"></th>
 			    </tr>
 			  </thead>
 				<table-row :data='data'></table-row>
@@ -157,13 +151,13 @@ Vue.component('app-body', {
 			<div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-inline form-group pull-right">
-                  <button class="btn btn-danger">
-                      <span class="glyphicon glyphicon-floppy-disk"></span> Save
-                  </button>
-									&nbsp;
-                  <button class="btn btn-primary">
-                      <span class="glyphicon glyphicon-plus"></span> Add
-                  </button>
+								<button class="btn btn-primary">
+										<span class="glyphicon glyphicon-plus"></span> Add
+								</button>
+								&nbsp;
+                <button class="btn btn-danger">
+                    <span class="glyphicon glyphicon-floppy-disk"></span> Save
+                </button>
               </div>
           </div>
       </div>
