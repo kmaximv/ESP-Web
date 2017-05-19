@@ -3,7 +3,7 @@
     "config":{
       "data": [{
         "name": "Wi-Fi",
-        "link": "/wificonf.html",
+        "link": "/wifi.html",
         "icon": "glyphicon glyphicon-signal",
         "isActive": false
       }, {
@@ -13,17 +13,17 @@
         "isActive": false
       }, {
         "name": "ESP",
-        "link": "/espconf.html",
+        "link": "/esp.html",
         "icon": "glyphicon glyphicon-wrench",
         "isActive": false
       }, {
         "name": "MQTT",
-        "link": "/mqttconf.html",
+        "link": "/mqtt.html",
         "icon": "glyphicon glyphicon-send",
         "isActive": false
       }, {
         "name": "NTP Time",
-        "link": "/ntpconf.html",
+        "link": "/ntp.html",
         "icon": "glyphicon glyphicon-time",
         "isActive": false
       }, {
@@ -38,7 +38,7 @@
         "isActive": false
       }, {
         "name": "FS Editor",
-        "link": "/edit.html",
+        "link": "/edit.htm",
         "icon": "glyphicon glyphicon-edit",
         "isActive": false
       }, {

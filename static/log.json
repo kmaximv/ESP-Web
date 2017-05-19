@@ -1,0 +1,82 @@
+{
+	"data":{
+		"title": "Logging Configuration",
+	  "forms":[
+			{
+  			"title": "Serial log level",
+				"enabled": true,
+  			"name": "serial_log_level",
+        "selected": "1",
+  			"options":[{
+  				"name": "0 None",
+  				"val": "0"
+  			},{
+  				"name": "1 Error",
+  				"val": "1"
+  			},{
+  				"name": "2 Info",
+  				"val": "2"
+  			},{
+  				"name": "3 Debug",
+  				"val": "3"
+  			},{
+  				"name": "4 More debug",
+  				"val": "4"
+  			}]
+  		},{
+  			"title": "Web log level",
+				"enabled": true,
+  			"name": "web_log_level",
+        "selected": "2",
+  			"options":[{
+  				"name": "0 None",
+  				"val": "0"
+  			},{
+  				"name": "1 Error",
+  				"val": "1"
+  			},{
+  				"name": "2 Info",
+  				"val": "2"
+  			},{
+  				"name": "3 Debug",
+  				"val": "3"
+  			},{
+  				"name": "4 More debug",
+  				"val": "4"
+  			}]
+  		},{
+				"header": "Syslog settings",
+  			"title": "Syslog level",
+				"enabled": true,
+  			"name": "syslog_level",
+        "selected": "3",
+  			"options":[{
+  				"name": "0 None",
+  				"val": "0"
+  			},{
+  				"name": "1 Error",
+  				"val": "1"
+  			},{
+  				"name": "2 Info",
+  				"val": "2"
+  			},{
+  				"name": "3 Debug",
+  				"val": "3"
+  			},{
+  				"name": "4 More debug",
+  				"val": "4"
+  			}]
+  		},{
+  			"title": "Syslog host",
+				"enabled": true,
+  			"name": "syslog_host",
+        "val": "192.168.2.50"
+  		},{
+  			"title": "Syslog port",
+				"enabled": true,
+  			"name": "syslog_port",
+        "val": "514"
+  		}
+    ]
+	}
+}

@@ -1,0 +1,68 @@
+{
+	"data":{
+		"title": "MQTT Configuration",
+	  "forms":[
+			{
+  			"title": "MQTT Enable",
+  			"enabled": true,
+  			"name": "mqtt_enable",
+        "checked": true,
+        "checkbox": true
+  		},{
+  			"title": "Server MQTT",
+				"enabled": true,
+  			"name": "mqtt_server",
+        "val": "m10.cloudmqtt.com"
+  		},{
+  			"title": "Port MQTT",
+				"enabled": true,
+  			"name": "mqtt_port",
+        "val": "19572"
+  		},{
+  			"title": "MQTT Authentication",
+  			"enabled": true,
+  			"name": "mqtt_auth",
+        "checked": true,
+        "checkbox": true
+			},{
+  			"title": "MQTT User",
+				"enabled": true,
+  			"name": "mqtt_user",
+        "val": "test"
+  		},{
+  			"title": "MQTT Password",
+				"enabled": true,
+  			"name": "mqtt_pwd",
+        "password": "********"
+			},{
+				"header": "Other settings",
+  			"title": "MQTT Postfix",
+				"enabled": true,
+  			"name": "mqtt_postfix",
+        "val": "_BedM"
+  		},{
+  			"title": "Publish Topic",
+				"enabled": true,
+  			"name": "publish_topic",
+				"val": "/stateSub/"
+  		},{
+  			"title": "Subscribe Topic",
+				"enabled": true,
+  			"name": "subscribe_topic",
+				"val": "/statePub/"
+  		},{
+  			"title": "Publish Delay",
+				"enabled": true,
+  			"name": "publish_delay",
+				"val": "10",
+				"unit": "sec"
+  		},{
+  			"title": "Subscribe Delay",
+				"enabled": true,
+  			"name": "subscribe_delay",
+				"val": "60",
+				"unit": "sec"
+  		}
+    ]
+	}
+}

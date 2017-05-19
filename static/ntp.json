@@ -1,0 +1,24 @@
+{
+	"data":{
+		"title": "NTP Configuration",
+	  "forms":[
+			{
+  			"title": "NTP Enable",
+  			"enabled": true,
+  			"name": "ntp_enable",
+        "checked": true,
+        "checkbox": true
+  		},{
+  			"title": "Server NTP",
+				"enabled": true,
+  			"name": "ntp_server",
+        "val": "europe.pool.ntp.org"
+  		},{
+  			"title": "Time zone",
+				"enabled": true,
+  			"name": "time_zone",
+        "val": "+6"
+  		}
+    ]
+	}
+}

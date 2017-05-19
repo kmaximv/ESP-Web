@@ -3,9 +3,6 @@ var menuData = {
 	  config:{
 			data: [],
 	  },
-	  test:{
-			data: [],
-	  },
 	}
 };
 
@@ -24,7 +21,7 @@ axios.get('./menu.json')
 			console.log(error);
 	});
 
-axios.get('./wificonf.json')
+axios.get('./mqtt.json')
 	.then(function (response) {
 			app.data = response.data.data;
 			appHeader.header = response.data.data.header;
@@ -78,49 +75,12 @@ Vue.component('input-string', {
 						:name='data.name'
 						:id='data.name'
 						:placeholder="data.password" class="form-control">
+					<span v-if='data.unit' class='input-group-addon'>{{ data.unit }}</span>
 				</div>
 			</div>
 		</div>
 		`,
-	props: ['data'],
-	methods: {
-		selectMode: function () {
-			if (this.data.selected === "STA") {
-				optionsData.data.forms[2].enabled = false;
-				optionsData.data.forms[3].enabled = false;
-				optionsData.data.forms[4].enabled = false;
-				optionsData.data.forms[5].enabled = false;
-				optionsData.data.forms[6].enabled = true;
-				optionsData.data.forms[7].enabled = true;
-			} else if (this.data.selected === "AP") {
-				optionsData.data.forms[2].enabled = true;
-				optionsData.data.forms[3].enabled = true;
-				optionsData.data.forms[4].enabled = true;
-				optionsData.data.forms[5].enabled = true;
-				optionsData.data.forms[6].enabled = false;
-				optionsData.data.forms[7].enabled = false;
-			} else if (this.data.selected === "AP_STA") {
-				optionsData.data.forms[2].enabled = true;
-				optionsData.data.forms[3].enabled = true;
-				optionsData.data.forms[4].enabled = true;
-				optionsData.data.forms[5].enabled = true;
-				optionsData.data.forms[6].enabled = true;
-				optionsData.data.forms[7].enabled = true;
-			}
-
-			if (this.data.name === "wifi_auth" &&
-					optionsData.data.forms[1].selected != "STA") {
-				if (this.data.selected === "OPEN") {
-					optionsData.data.forms[5].enabled = false;
-				} else {
-					optionsData.data.forms[5].enabled = true;
-				}
-			}
-		}
-	},
-	created: function() {
-	  this.selectMode();
-	}
+	props: ['data']
 });
 
 
@@ -140,10 +100,14 @@ Vue.component('input-checkbox', {
 	props: ['data'],
 	methods: {
     checkboxMode: function () {
-			if (this.data.name === "static_ip_enable") {
-				optionsData.data.forms[9].enabled = this.data.checked;
-				optionsData.data.forms[10].enabled = this.data.checked;
-				optionsData.data.forms[11].enabled = this.data.checked;
+			if (this.data.name === "mqtt_auth") {
+				optionsData.data.forms[4].enabled = this.data.checked;
+				optionsData.data.forms[5].enabled = this.data.checked;
+			}
+			if (this.data.name === "mqtt_enable") {
+				for (var i = 1; i < optionsData.data.forms.length; i++) {
+				  optionsData.data.forms[i].enabled = this.data.checked;
+				}
 			}
     }
   },

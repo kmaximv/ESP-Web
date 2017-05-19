@@ -1,0 +1,14 @@
+{
+	"data":{
+		"title": "ESP Configuration",
+	  "forms":[
+			{
+  			"title": "Update Data Delay",
+				"enabled": true,
+  			"name": "update_data_delay",
+        "val": "10",
+        "unit": "sec"
+  		}
+    ]
+	}
+}
